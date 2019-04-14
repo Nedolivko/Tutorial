@@ -1,5 +1,3 @@
-# Tutorial
-My first repository on GitHub
 class Node:
 
     def __init__(self, v):
