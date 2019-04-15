@@ -56,7 +56,7 @@ class LinkedList:
         while node is not None:
             if node.value == val:
                 if node.next == None:
-                    self.tail = node
+                    self.tail = node.next
                 old.next = node.next
                 node = self.head
                 if all == False:
