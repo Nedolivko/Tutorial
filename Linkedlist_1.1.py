@@ -55,13 +55,16 @@ class LinkedList:
         node = self.head
         while node is not None:
             if node.value == val:
-                if node.next == None:
-                    self.tail = node.next
                 old.next = node.next
                 node = self.head
                 if all == False:
                     break
             old = node
+            node = node.next
+        node = self.head
+        while node is not None:
+            if node.next == None:
+                self.tail = node
             node = node.next
 
     def clean(self):
@@ -94,7 +97,9 @@ class LinkedList:
             if count == afterNode:
                 newnode.next = node.next
                 node.next = newnode
-                if node.next == None:
-                    self.tail = node.next
-                break
+            node = node.next
+        node = self.head
+        while node is not None:
+            if node.next == None:
+                self.tail = node
             node = node.next
