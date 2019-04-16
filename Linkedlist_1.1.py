@@ -58,6 +58,11 @@ class LinkedList:
                 old.next = node.next
                 node = self.head
                 if all == False:
+                    node = self.head
+                    while node is not None:
+                        if node.next == None:
+                            self.tail = node
+                        node = node.next
                     break
             old = node
             node = node.next
