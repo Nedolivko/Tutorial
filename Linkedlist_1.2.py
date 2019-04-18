@@ -47,10 +47,13 @@ class LinkedList:
             while (self.head.value == val):
                 self.head = self.head.next
                 if self.head == None:
+                    self.tail = None
                     return
         else:
             if val == self.head.value:
                 self.head = self.head.next
+                if self.head == None:
+                    self.tail = None
                 return
         node = self.head
         while node is not None:
@@ -58,6 +61,11 @@ class LinkedList:
                 old.next = node.next
                 node = self.head
                 if all == False:
+                    node = self.head
+                    while node is not None:
+                        if node.next == None:
+                            self.tail = node
+                        node = node.next
                     break
             old = node
             node = node.next
@@ -108,7 +116,7 @@ class LinkedList:
         n = self.len()
         p = other.len()
         print(n,p)
-        if n == p:
+        if (n == p) and (n != 0):
             node = self.head
             xnode = other.head
             t_list = LinkedList()
