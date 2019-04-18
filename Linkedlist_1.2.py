@@ -116,7 +116,7 @@ class LinkedList:
         n = self.len()
         p = other.len()
         print(n,p)
-        if (n == p) and (n != 0):
+        if (n == p) and ((n != 0) or (p != 0)):
             node = self.head
             xnode = other.head
             t_list = LinkedList()
@@ -126,4 +126,4 @@ class LinkedList:
                 xnode = xnode.next
             t_list.print_all_nodes()
         else:
-            print('Длины списков разные')
+            print('Длины списков разные или есть пустой список')
